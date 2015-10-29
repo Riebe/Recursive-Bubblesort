@@ -1,0 +1,32 @@
+import java.util.Arrays;
+
+public class recursiveBubblesort 
+{
+	public static void main(String[] args) 
+	{
+		int[] A = new int[] {8,4,2,7,5,1,9,6};
+		int i = A.length -1;
+		int j = 0;
+		
+		System.out.println(Arrays.toString(A));
+		
+		bubble(A,i,j);
+		
+		System.out.println(Arrays.toString(A));
+	}
+	static void bubble (int[] A, int i, int j)
+	{
+		if(j < i && i > 1)
+		{
+			bubble(A, i-1, j);
+			bubble(A, i, j+1);
+			
+			if(A[j] > A[j+1])
+			{
+				int temp = A[j];
+				A[j] = A[j+1];
+				A[j+1] = temp;
+			}	
+		}
+	}
+}
